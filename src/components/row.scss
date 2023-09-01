@@ -1,0 +1,179 @@
+.row {
+    margin-top: 10px;
+    padding: 10px 0;
+    color: #fff;
+    position: relative;
+    height: auto;
+    margin: 0 0.2rem;
+
+    .row_loading {
+        height: 200px;
+        padding: 15px 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.2s all ease;
+
+        .lds-ring {
+            display: inline-block;
+            position: relative;
+            width: 80px;
+            height: 80px;
+
+            div {
+                box-sizing: border-box;
+                display: block;
+                position: absolute;
+                width: 64px;
+                height: 64px;
+                margin: 8px;
+                border: 8px solid #fff;
+                border-radius: 50%;
+                animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+                border-color: #fff transparent transparent transparent;
+
+                &:nth-child(1) {
+                    animation-delay: -0.45s;
+                }
+
+                &:nth-child(2) {
+                    animation-delay: -0.3s;
+                }
+
+                &:nth-child(3) {
+                    animation-delay: -0.15s;
+                }
+            }
+        }
+
+
+        @keyframes lds-ring {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    }
+
+    .row_navigate {
+        position: absolute;
+        z-index: 3;
+        cursor: pointer;
+        top: 45%;
+        left: 5px;
+        color: grey;
+        border-radius: 50%;
+        font-size: 30px;
+        background-color: #fff;
+        opacity: 0.5;
+        transition: 0.2s ease;
+
+        &:hover {
+            color: grey;
+            opacity: 1;
+        }
+    }
+
+    .row_navigate-2 {
+        position: absolute;
+        z-index: 3;
+        cursor: pointer;
+        top: 45%;
+        right: 4px;
+        color: grey;
+        font-size: 30px;
+        border-radius: 50%;
+        background-color: #fff;
+        opacity: 0.5;
+        transition: 0.2s ease;
+
+
+        &:hover {
+            color: grey;
+            opacity: 1;
+        }
+    }
+
+    .row_box {
+        display: flex;
+        overflow-y: hidden;
+        scroll-behavior: smooth;
+        overflow-x: scroll;
+        padding: 15px 0px;
+        transition: 0.2s all ease;
+        height: 100%;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+
+
+        .row_container {
+            position: relative;
+            transition: 0.2s ease;
+            height: 100%;
+            width: 100%;
+
+            &:hover {
+                background-color: #111;
+                opacity: 0.5;
+
+                .row_icon {
+                    display: block;
+                    position: absolute;
+                    color: #fff;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    font-size: 2rem;
+                    transition: 0.5s ease;
+                    z-index: 4;
+                    cursor: pointer;
+                }
+            }
+
+
+            .row_poster {
+                object-fit: cover;
+                margin: 0 0.5rem;
+                transition: transform 450ms;
+                height: 150px;
+                width: 300px;
+
+                &:hover {
+                    transform: scale(1.1);
+                    opacity: 1;
+                    cursor: pointer;
+                }
+            }
+
+            .row_posterLarge {
+                height: 350px;
+                width: auto;
+
+                &:hover {
+                    transform: scale(1.1);
+                    opacity: 1;
+                    cursor: pointer;
+                }
+            }
+
+            .row_icon {
+                display: none;
+            }
+
+
+        }
+
+
+
+    }
+
+}
