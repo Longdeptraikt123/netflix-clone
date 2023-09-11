@@ -2,9 +2,10 @@ import './sign-in.scss'
 import React, { useEffect, useRef } from "react";
 import { BsArrowLeft } from 'react-icons/bs';
 import Image from '../img/netflix-bg.jpeg'
+import { Link } from 'react-router-dom';
 const SignIn = () => {
     const ref = useRef(null)
-    
+
     useEffect(() => {
         ref.current.focus();
     }, [])
@@ -19,7 +20,7 @@ const SignIn = () => {
             }}
             className='sign-in-wrapper'>
             <div className='back-to-home'>
-                <a href='/'>Back to home</a>
+                <Link to='/'>Back to home</Link>
                 <BsArrowLeft className='arrow' />
 
             </div>
@@ -66,7 +67,7 @@ const SignIn = () => {
                     <div className='sign-up'>
                         <div className='sign-up-box'>
                             <span>New to Netflix?</span>
-                            <a href='/sign-up'>Sign up now</a>
+                            <Link to='/sign-up'>Sign up now</Link>
                         </div>
                         <div className='sign-up-terms'>
                             <span>This page is protected by Google reCAPTCHA to ensure you're not a bot.</span>
